@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+
+{% block title %}Post{% endblock title%}
+
+{% block content %}
+    <h1>Post</h1>
+
+
+
+div class="card">
+    <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+      <p><small>{{ post.date_created }}</small></p>
+        <p>{{ post.body }}
+        </p>
+    </div>
+    <div class="card-footer">
+        This post brought to you by: {{ post.user.username }}
+    </div>
+
+</div>
+
+{% endblock content %}
