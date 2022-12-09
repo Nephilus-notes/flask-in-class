@@ -3,7 +3,12 @@
 {% block title %}Home{% endblock title%}
 
 {% block content %}
+
     <h1>Home</h1>
-<p>This is the home page!</p>
+    {% if user.is_authenticated %}
+<p>Welcome to our app {{ user.username }}</p>
+{% else %}
+<p>Please <a href="{{ url_for('auth.login') }}">Login</a></p>
+{% endif%}
 
 {% endblock content %}
